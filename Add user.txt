@@ -1,0 +1,22 @@
+useradd --create-home username
+
+passwd username
+
+#check su
+sudo -lU username
+
+#add user to Su
+usermod -aG wheel username
+
+visudo
+
+uncomment %wheel ALL=(ALL) ALL
+
+Escape and type :wq to save the file
+
+#remove a user
+gpasswd -d username wheel #wheel remove
+
+gpasswd -d username sudo #removesudo
+
+delete user: userdel -r username

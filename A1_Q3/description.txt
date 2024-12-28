@@ -1,0 +1,32 @@
+#1 
+This snippet checks if input.txt (given file)
+exists or not
+
+#2
+Makes the directory "Result" 
+mkdir -p: no error will be reported if a directory given 
+            as an operand already exists. (src: man page)
+
+#3 #3.1
+Reads through the given file line by line, 
+checks if the line is not empty
+and "continue" skips following commands to next iteration
+
+#3.2
+Reads lines and separates each line into an array of 
+two numbers and a word (command)
+
+#3.3
+checks if format is valid
+if it is, numbers and the operand are assigned to variables
+
+#4
+the calculation is executed as per the operand
+
+#5
+results are printed in output.txt in the Results directory
+
+references 
+OS assignment 1 practice
+OS tut 1 slides
+OS class slides

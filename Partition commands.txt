@@ -1,0 +1,8 @@
+sudo parted /dev/sda print
+
+lsblk
+
+sudo fdisk -l
+
+cat /etc/fstab
+

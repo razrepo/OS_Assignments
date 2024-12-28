@@ -1,0 +1,6 @@
+uname -r
+uname -mrs
+cat /proc/version
+cat /proc/sys/kernel/osrelease
+ls /lib/modules
+dmesg | grep "Linux version"

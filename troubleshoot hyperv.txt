@@ -1,0 +1,7 @@
+bcdedit /set hypervisorlaunchtype off
+
+bcdedit /set {current} hypervisorlaunchtype off
+
+reboot
+
+bcdedit /set hypervisorlaunchtype auto

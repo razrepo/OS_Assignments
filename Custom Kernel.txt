@@ -1,0 +1,60 @@
+uname -mrs #Display system information (current kernel)
+
+mkdir new_kernel #Create a new directory called "new_kernel"
+
+pacman -S tar
+
+cd new_kernel #Change to the "new_kernel" directory
+
+pacman -S lynx #Install the 'lynx' package (a text-based web browser)
+
+lynx kernel.org #Use 'lynx' to visit the kernel.org website
+
+# Download the Linux kernel source code from the website and save it in the current directory
+# Once downloaded, you can extract it as follows:
+
+tar -xvf linux-5.19.9.tar.xz #Extract the downloaded archive
+
+cd linux-0x0x0 #Change to the extracted Linux kernel source code directory
+
+make mrproper #Clean the kernel source tree to ensure a fresh build
+
+lynx is.am/56er #Use 'lynx' to visit a URL (is.am/56er) for virtualbox config file
+
+mv config-rev-9-gold .config #Rename the configuration file 'config-rev-9-gold' to '.config'
+
+make nconfig #Launch the kernel configuration menu (text-based GUI)
+
+#Press escape and save the config as is (no changes required)
+
+make #Build the kernel (takes time)
+
+make modules #Build kernel modules 
+
+make modules_install #Install kernel modules(takes time)
+
+cp -v arch/x86/boot/bzImage /boot/vmlinuz-linux_sonoma # Copy the kernel image to the '/boot' directory with a custom name (sonoma)
+
+# List the contents of the '/usr/lib/modules' directory
+# This is to verify that the kernel modules have been installed correctly
+ls /usr/lib/modules
+# There should be two folders corresponding to different kernel versions
+
+mkinitcpio -k 5.19.9 -g /boot/initramfs-linux_sonoma.img #create and initial RAM disk (initramfs for the new kernel)
+
+grub-mkconfig -o /boot/grub/grub.cfg #Generate a GRUB configuration file
+
+reboot #reboot the system
+
+# When the system restarts, choose the 'advanced option' in efi for artix linus 
+# Select the newly built kernel (sonoma)and press enter to boot with it
+
+# After successful booting, log in to the system
+
+# Verify the kernel version to ensure it's different from the previous one
+uname -mrs
+or
+uname -r
+
+# The output should display a kernel version different from the initial one
+# This confirms that you have successfully built and booted into the new kernel

@@ -1,0 +1,46 @@
+Q2 Description and Working
+
+Files Made:
+1. shell.c
+    runs the shell inside the terminal
+    takes in commands and executes them accordingly 
+    uses fork and exec to spawn and execute dir and date commands
+    word command inbuilt as the parent process
+
+2. word.c 
+    is responsible for the word command, counts the number of words
+    in a given file.
+
+    word fileName :
+        prints number of words and newline characters if any 
+
+    word -n fileName :
+        prints number of words by ignoring newline characters if any
+
+    word -d fileName1 fileName2 :
+        prints difference between the number of words in two Files
+
+3. dir.c 
+    is responsible for dir command, which is used to make new directories
+
+    dir fileName :
+        makes a new directory by the name of "fileName"
+
+    dir -r fileName :
+        makes a new directory by the name "fileName", if the file already exists
+        it deletes the file and remakes the directory instead of throwing an error
+
+    dir -v fileName : 
+        makes a new directory and prints every step required in the process
+
+4. date.c
+    is responsible for the date command, prints when a given file was last modified or created
+
+    date -d 'string' fileName :
+        prints out the last modified time in string format
+        ""Last modified time of input.txt: Tue Aug 29 15:12:44 2023""
+        prints according to strings "yesterday", "dayafter", "daybefore", "tomorrow"
+    
+    date -R fileName :
+        prints out the last modified time in RFC 5322 format
+        ""Last modified time of input.txt in RFC 5322 format: Tue, 29 Aug 2023 15:12:44 +0530""

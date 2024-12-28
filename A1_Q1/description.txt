@@ -1,0 +1,26 @@
+Part 1: q1p1
+This program prints 4 statements in the following order
+A) Parent (P) is having ID 40732
+C) Child is having ID 40734
+D) My Parent ID is 40732
+B) ID of P's Child is 40734
+
+This is achieved by printing the PARENT PID first and then the CHILD process
+and post that making the PARENT process wait until thE CHILD process is over
+and then prints statement B.
+
+Part 2: q1p2
+This program has two processes:
+1. The PARENT process that prints the first 16 numbers in the fibonacci sequence 
+2. The CHILD process that prints the factorial of 4
+
+In this part, the PARENT waits for the CHILD to finish execution
+This is achieved by a process similar to Part 1, by adding a "wait()"
+prior to the PARENT process's execution.
+
+Part 3: q1p2 BONUS
+This program has the same processes as Part 2 but the opposite order of exexution
+for the CHILD waits for the PARENT to finish executing.
+
+This is achieved by using the "wait()" in the CHILD process's iteration instead 
+of the PARENT's. This makes the CHILD process wait until the PARENT process is over.

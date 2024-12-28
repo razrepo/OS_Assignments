@@ -1,0 +1,14 @@
+sudo parted /dev/sda print
+
+lsblk
+
+sudo fdisk -l
+
+sudo parted /dev/sda print #install parted first
+
+cat /etc/fstab
+
+sudo gparted #install gparted first
+
+
+
